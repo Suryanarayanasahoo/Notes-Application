@@ -14,9 +14,7 @@ span{
             font-weight: 800;
         }
   #n{
-            /* background: linear-gradient(brown, red); */
                     background: linear-gradient(to right, red,blue);
-            
             color: transparent;
             background-clip: text;
             

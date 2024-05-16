@@ -22,7 +22,7 @@
 					<div class="card-body">
 						<p class="fs-4 text-center">Registration Page</p>
 						
-						<%-- <%  String msg= (String)  session.getAttribute("success"); 
+						 <%  String msg= (String)  session.getAttribute("success"); 
 						 if(msg != null){
 							 %>
 							 
@@ -30,7 +30,7 @@
 							 <% session.removeAttribute("success"); %>
 							 
 						 <% }%>
-						  --%>
+						  
 						<form action="register" method="post">
 							<div class="mb-3">
 								<label class="form-label">Name</label> <input name="name"
@@ -40,10 +40,7 @@
 								<label class="form-label">Age</label> <input name="age"
 									type="tel" class="form-control" required>
 							</div>
-							<div class="mb-3">
-								<label class="form-label">Mobile</label> <input name="mobile"
-									type="tel" class="form-control" required>
-							</div>
+							
 							<div class="mb-3">
 								<label class="form-label">Email Address</label> <input
 									name="email" type="email" class="form-control" required>
@@ -51,6 +48,10 @@
 							<div class="mb-3">
 								<label class="form-label">Password</label> <input
 									name="password" type="password" class="form-control" required>
+							</div>
+							<div class="mb-3">
+								<label class="form-label">Mobile</label> <input name="mobile"
+									type="tel" class="form-control" required>
 							</div>
 							<button type="submit" class="btn bg-danger text-white col-md-12">Register</button>
 							
