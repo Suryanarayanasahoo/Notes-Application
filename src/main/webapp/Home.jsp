@@ -1,6 +1,6 @@
-<%@page import="java.util.List"%>
-<%@page import="com.org.Dao.UserDao"%>
 <%@page import="com.org.Dto.User"%>
+<%@page import="java.util.List"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -51,8 +51,8 @@
 <body>						 
 <%
 
-User user = (User) session.getAttribute("userObj");
-if (user == null){
+User users = (User) session.getAttribute("userObj");
+if (users == null){
 response.sendRedirect("Login.jsp");
 }
 else{
@@ -61,7 +61,7 @@ else{
 
 
 <div class="container">
-<h1>Hello, <span> <%= user.getName() %></span></h1>
+<h1>Hello, <span> <%= users.getName() %></span></h1>
 
 
     <h1>Welcome Surya Notes</h1>

@@ -64,9 +64,9 @@ public class UserDao {
 	}
 	
 	public User fetchUserByEmailAndPassword(String email,String password) {
-		User user=null;
 		
-		Query qr=em.createQuery("select S from User S where S.email=?1 , S.password=?2");
+		
+		Query qr=em.createQuery("select users from User users where users.email=?1 and users.password=?2");
 		qr.setParameter(1, email);
 		qr.setParameter(2, password);
 		

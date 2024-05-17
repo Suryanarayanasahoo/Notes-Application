@@ -22,7 +22,8 @@
 				<div class="card paint-card">
 					<div class="card-body">
 						<p class="fs-4 text-center">User Login</p>
-						<%  String msg= (String)  session.getAttribute("fail"); 
+						
+						 <%  String msg= (String)  session.getAttribute("fail"); 
 						 if(msg != null){
 							 %>
 							 
@@ -31,14 +32,14 @@
 							 
 						 <% }%>
 						 
-						 <%  String msg1= (String)  session.getAttribute("change"); 
+						  <%  String msg1= (String)  session.getAttribute("change"); 
 						 if(msg1 != null){
 							 %>
 							 
 							 <p class="text-center text-success fa-4 "><%= msg1%></p>
 							 <% session.removeAttribute("change"); %>
 							 
-						 <% }%>
+						 <% }%> 
 						 
 						
 					

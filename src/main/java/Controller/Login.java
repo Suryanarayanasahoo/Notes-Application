@@ -20,17 +20,19 @@ public class Login  extends HttpServlet
 		String password =req.getParameter("password");
 		
 		UserDao dao=new UserDao();
-		User user = dao.fetchUserByEmailAndPassword(email, password);
+		User users = dao.fetchUserByEmailAndPassword(email, password);
+
 		
 		HttpSession session=req.getSession();
 		
-		if(user != null) {
-			session.setAttribute("userobject", user);
+		if(users != null) {
+			System.out.println("hi");
+			session.setAttribute("userObj", users);
 			resp.sendRedirect("Home.jsp");
 		}
 		else {
 			session.setAttribute("fail", "Inavalid Crendential");
-			resp.sendRedirect("login.jsp");
+			resp.sendRedirect("Login.jsp");
 			
 		}
 	}
