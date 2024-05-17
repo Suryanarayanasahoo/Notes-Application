@@ -1,3 +1,4 @@
+<%@page import="com.org.Dto.Notes"%>
 <%@page import="com.org.Dto.User"%>
 <%@page import="java.util.List"%>
 
@@ -46,11 +47,17 @@
   color: crimson;
 	
 }
+.Add{
+
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 25%;
+}
 </style>
 </head>
 <body>						 
 <%
-
 User users = (User) session.getAttribute("userObj");
 if (users == null){
 response.sendRedirect("Login.jsp");
@@ -58,7 +65,6 @@ response.sendRedirect("Login.jsp");
 else{
  %>
 <%@ include file="compenents\navbar2.jsp"%>
-
 
 <div class="container">
 <h1>Hello, <span> <%= users.getName() %></span></h1>
@@ -68,8 +74,43 @@ else{
     <p>We're delighted to have you here!</p>
   </div>
 
+<% String msg=(String) session.getAttribute("success");
+if (msg !=null){
+%>
+<p class="text-center text-success fs-4">
+<%= msg %>
+</p>
+<% session.removeAttribute("success");
+}
+%>
 
-							 
+<% 
+List<Notes> list= users.getNotes();
+%>
+<div class="Add">
+<a href="Addnotes.jsp">
+<button class="btn-danger">Add-note</button>
+</a>
+</div>
+
+<%  
+for (Notes n:list){
+
+%>
+<div class="col-md-4 card border border-danger m-4" style="width: 15rem">
+<div class="card-body" >
+<div class="d-flex flex-wrap justify-content-evenly">
+<div>
+<h2 class="text-success card-title"><%=n.getTitle() %></h2>
+<a href="#" class="btn btn-sm btn-info">View</a>
+<a href="#" class="btn btn-sm btn-info">Update</a>
+<a href="#" class="btn btn-sm btn-danger">Delete</a>
+</div>
+</div>
+</div>
+
+</div>						 
+ <% }%>
  <% }%>
 						
 </body>

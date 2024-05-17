@@ -26,7 +26,6 @@ public class Login  extends HttpServlet
 		HttpSession session=req.getSession();
 		
 		if(users != null) {
-			System.out.println("hi");
 			session.setAttribute("userObj", users);
 			resp.sendRedirect("Home.jsp");
 		}
